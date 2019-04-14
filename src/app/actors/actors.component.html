@@ -1,0 +1,19 @@
+<h2>Behold Their Glory</h2>
+
+  <div class="actors" *ngFor="let actor of actors">
+    <div>
+      <span>Name: </span>{{actor.name}}
+    </div>
+    <div>
+      <span>Age: </span>{{actor.age}}
+    </div>
+    <div>
+      <label>Favorite Movie/Show:
+        <input [(ngModel)]="actor.favoriteWork" placeholder="Favorite Work">
+      </label>
+    </div>
+    <button id={{actor.name}} type="button" (click)="onSelect(actor)">Show Image</button>
+    <div *ngIf=actor.displayImage>
+      <img src={{actor.image}} alt={{actor.name}}>
+    </div>
+  </div>
